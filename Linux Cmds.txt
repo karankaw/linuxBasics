@@ -1,0 +1,78 @@
+https://askubuntu.com/questions/41332/how-do-i-check-if-i-have-a-32-bit-or-a-64-bit-os
+
+https://askubuntu.com/questions/422975/e-package-python-software-properties-has-no-installation-candidate
+
+Already Root, No need to run 
+
+https://askubuntu.com/questions/148932/how-can-i-get-a-list-of-all-repositories-and-ppas-from-the-command-line-into-an
+grep -r --include '*.list' '^deb ' /etc/apt/sources.list /etc/apt/sources.list.d/
+
+ldd --version
+
+https://launchpad.net/ubuntu/+ppas
+
+https://www.ssh.com/ssh/command/
+ssh username@hostname
+
+-----------------------------------------------------------------------------------------------------------------------------------
+export  http_proxy=http://10640691:Worker101@airinlxwproxy.nmumarl.lntinfotech.com:8080
+export  https_proxy=https://10640691:Worker101@airinlxwproxy.nmumarl.lntinfotech.com:8080 
+
+export MAVEN_OPTS="-DsocksProxyHost=airinlxwproxy.nmumarl.lntinfotech.com -DsocksProxyPort=8080"
+ 
+add-apt-repository ppa:webupd8team/java
+
+mvn  -Dmaven.proxy.host=airinlxwproxy.nmumarl.lntinfotech.com -Dmaven.proxy.ntlm.domain=nmumarl -Dmaven.proxy.port=8080 -Dmaven.proxy.username=10640691 -Dmaven.proxy.password=Worker101
+
+
+https://unix.stackexchange.com/questions/203290/how-do-i-clear-the-terminal-history
+/root/.bash_history
+history -c
+
+mvn  -Dmaven.proxy.host=airincoproxy2.nmumarl.lntinfotech.com -Dmaven.proxy.port=2006 -Dmaven.proxy.username=10640691 -Dmaven.proxy.password=Worker101
+
+https://www.linux.com/learn/how-find-your-linux-version-or-distro-release-and-why-it-matters
+lsb_release -a
+uname -r
+
+-----------------------------------------------------------------------------------------------------------------------------------
+https://tecadmin.net/install-oracle-java-8-ubuntu-via-ppa/#
+https://medium.com/coderscorner/installing-oracle-java-8-in-ubuntu-16-10-845507b13343
+
+$sudo add-apt-repository ppa:webupd8team/java
+$sudo apt-get update
+$sudo apt-get install oracle-java8-installer
+
+
+Step 2 – Verify Installed Java Version 
+
+After successfully installing Oracle Java 8 using the above steps, Let’s verify the installed version using the following command.
+$java -version 
+
+java version "1.8.0_161"
+Java(TM) SE Runtime Environment (build 1.8.0_161-b12)
+Java HotSpot(TM) 64-Bit Server VM (build 25.161-b12, mixed mode)
+ http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jdk-8u161-linux-x64.tar.gz
+-----------------------------------------------------------------------------------------------------------------------------------
+http://www.javahelps.com/2017/10/install-apache-maven-on-linux.html
+apt install maven
+
+-----------------------------------------------------------------------------------------------------------------------------------
+https://stackoverflow.com/questions/9846046/run-main-class-of-maven-project
+mvn clean install eclipse:eclipse
+
+mvn exec:java -Dexec.mainClass="HelloTF"
+
+ wget https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow-1.6.0.jar --no-check-certificate
+
+
+TF_TYPE="cpu" # Default processor is CPU. If you want GPU, set to "gpu"
+ OS=$(uname -s | tr '[:upper:]' '[:lower:]')
+ mkdir -p ./jni
+ curl -k -L \
+   "https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow_jni-${TF_TYPE}-${OS}-x86_64-1.6.0.tar.gz" |
+   tar -xz -C ./jni
+
+
+ # Use -q to hide logging from the mvn tool
+ mvn -q compile exec:java
